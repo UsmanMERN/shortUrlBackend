@@ -4,11 +4,12 @@ const { route } = require("./routes/urlRoute");
 const { config } = require("dotenv");
 const app = express();
 const staticRoute = require("./staticRoute");
+// Enable CORS for all routes
+app.use(cors());
 const cors = require("cors")
 config();
 // json
 app.use(express.json());
-
 // database
 const { connectDB } = require("./config/connectDb");
 
@@ -19,7 +20,6 @@ app.use("/", route);
 // app.use("/", staticRoute);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors());
 // ejs
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
@@ -29,3 +29,4 @@ app.set("views", path.resolve("./views"));
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
+// https://learnwithfaizan.onrender.com

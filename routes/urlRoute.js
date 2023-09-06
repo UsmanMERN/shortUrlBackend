@@ -17,3 +17,4 @@ route.get("/analytics/:id", handleGetAnalytics);
 module.exports = {
   route,
 };
+// https://learnwithfaizan.onrender.com
