@@ -7,7 +7,9 @@ const {
 } = require("../controllers/handleURL");
 
 const route = express.Router();
-// route.get("/", handleFrontend);
+route.get("/", (req, res) => {
+  res.josn("app is runnig")
+});
 route.post("/url", handleGenerateNewShortURL);
 route.get("/:url", handleRedirect);
 route.get("/analytics/:id", handleGetAnalytics);
