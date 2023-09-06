@@ -13,7 +13,6 @@ const handleGenerateNewShortURL = async (req, res) => {
       visitHistory: [],
     }).save();
     res.status(201).json(data)
-    console.log(data);
   } catch (error) {
     console.error(error);
     throw error;
