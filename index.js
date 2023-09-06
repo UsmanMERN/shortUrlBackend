@@ -2,11 +2,10 @@ const express = require("express");
 const path = require("path");
 const { route } = require("./routes/urlRoute");
 const { config } = require("dotenv");
+const cors = require("cors")
 const app = express();
-const staticRoute = require("./staticRoute");
 // Enable CORS for all routes
 app.use(cors());
-const cors = require("cors")
 config();
 // json
 app.use(express.json());
@@ -18,8 +17,8 @@ connectDB();
 // middleWare
 app.use("/", route);
 // app.use("/", staticRoute);
-app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 // ejs
 app.set("view engine", "ejs");
 app.set("views", path.resolve("./views"));
