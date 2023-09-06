@@ -14,7 +14,6 @@ const handleGenerateNewShortURL = async (req, res) => {
       redirectURL: body.url,
       visitHistory: [],
     }).save();
-    console.log(data);
     res.status(201).json(data)
   } catch (error) {
     console.error(error);
