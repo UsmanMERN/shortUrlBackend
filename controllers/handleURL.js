@@ -9,9 +9,12 @@ const handleGenerateNewShortURL = async (req, res) => {
     const shortUrl = shortid();
     const data = await urlModal({
       shortId: shortUrl,
+      description: body.description,
+      image: body.image,
       redirectURL: body.url,
       visitHistory: [],
     }).save();
+    console.log(data);
     res.status(201).json(data)
   } catch (error) {
     console.error(error);

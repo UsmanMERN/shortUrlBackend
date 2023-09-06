@@ -11,7 +11,21 @@ const urlSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    visitHistory: [{ timestamps: { type: Number } }],
+    description: {
+      type: String, // Add a field for description
+      required: true, // Make it optional
+    },
+    image: {
+      type: String, // Add a field for image URL
+      required: true, // Make it optional
+    },
+    visitHistory: [
+      {
+        timestamp: {
+          type: Number,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
