@@ -8,7 +8,7 @@ const {
 
 const route = express.Router();
 route.get("/", (req, res) => {
-  res.json("app is running");
+  res.json("app is running...... oo yeah");
 });
 
 route.post("/url", handleGenerateNewShortURL);
