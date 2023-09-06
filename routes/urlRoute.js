@@ -8,8 +8,9 @@ const {
 
 const route = express.Router();
 route.get("/", (req, res) => {
-  res.josn("app is runnig")
+  res.json("app is running");
 });
+
 route.post("/url", handleGenerateNewShortURL);
 route.get("/:url", handleRedirect);
 route.get("/analytics/:id", handleGetAnalytics);
